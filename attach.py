@@ -21,7 +21,7 @@ device = frida.get_usb_device()
 
 time.sleep(1)  # Without it Java.perform silently fails
 
-session = device.attach("com.bitstrips.imoji")
+session = device.attach(sys.argv[1])
 
 script = session.create_script(open(sys.argv[2]).read())
 
